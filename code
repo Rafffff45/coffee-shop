@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class CoffeeShop {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Выберите кофе: ");
+        System.out.println("1 - Латте");
+        System.out.println("2 - Американо");
+        System.out.println("3 - Капучино");
+        int coffeeChoice = in.nextInt();
+
+        System.out.println("Выберите размер: ");
+        System.out.println("1 - Маленький");
+        System.out.println("2 - Средний");
+        System.out.println("3 - Большой");
+        int sizeChoice = in.nextInt();
+
+        double price = 0;
+
+        switch (coffeeChoice) {
+            case 1: // Латте
+                price = 500;
+                break;
+            case 2: // Американо
+                price = 400;
+                break;
+            case 3: // Капучино
+                price = 450;
+                break;
+            default:
+                System.out.println("Ошибка: такого кофе нет.");
+                return;
+        }
+
+        // Увеличиваем цену в зависимости от размера
+        switch (sizeChoice) {
+            case 1: // Маленький
+                price *= 1.0;
+                break;
+            case 2: // Средний
+                price *= 1.2;
+                break;
+            case 3: // Большой
+                price *= 1.4;
+                break;
+            default:
+                System.out.println("Ошибка: такого размера нет.");
+                return;
+        }
+
+        System.out.println("Стоимость вашего кофе: " + price + " тг");
+    }
+}
